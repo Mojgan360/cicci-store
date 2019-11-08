@@ -1,22 +1,24 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css?family=Muli|Open+Sans&display=swap");
+
+:root {
+  --primaryColor: #ceeae6;
+  --primaryRGBA: rgba(0, 0, 0, 0.3);
+  --mainColor: #fcd42b;
+  --darkColor: #291b4f;
+
+  --mainWhite: rgb(245, 245, 245);
+  --mainBlack: #101820ff;
+  --mainTransition: all 0.3s ease-in-out;
+  --mainSpacing: 0.3rem;
 }
 
-.App-logo {
-  height: 40vmin;
+body {
+  font-family: "Muli", sans-serif !important;
+  background: var(--mainColor) !important;
+  color: var(--mainBlack);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
+.text-title {
+  font-family: "Muli", sans-serif;
+  color: red;
+  background: blue;
 }
