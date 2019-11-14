@@ -1,24 +1,54 @@
 @import url("https://fonts.googleapis.com/css?family=Muli|Open+Sans&display=swap");
 
-:root {
-  --primaryColor: #ceeae6;
+/* 
+ --primaryColor: #293250;
   --primaryRGBA: rgba(0, 0, 0, 0.3);
-  --mainColor: #fcd42b;
-  --darkColor: #291b4f;
+  --mainColor: #ffd55a;
+  --darkColor: #6dd47e;
+ */
 
+/* 
+--primaryColor: #07617d;
+  --mainColor: #ececeb;
+  --darkColor: #f9a828;
+
+  --mainBlack: #2e383f;
+
+  --primaryRGBA: rgba(0, 0, 0, 0.3);
   --mainWhite: rgb(245, 245, 245);
-  --mainBlack: #101820ff;
+ */
+
+/* 
+ 
+2d4059
+ffb400
+f6f6f6
+ea5455 */
+:root {
+  --primaryColor: #ffb400;
+  --mainColor: #ececeb;
+  --darkColor: #07617d;
+  --test: #ff304f;
+  /* --mainWhiteRight: #faeeb7; */
+  --mainBlack: #2e383f;
+
+  --primaryRGBA: rgba(0, 0, 0, 0.3);
+  --mainWhite: rgb(245, 245, 245);
+
   --mainTransition: all 0.3s ease-in-out;
   --mainSpacing: 0.3rem;
 }
-
+.text-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  letter-spacing: var(--mainSpacing);
+  text-transform: capitalize;
+}
+.text-main {
+  color: var(--primaryColor);
+}
 body {
   font-family: "Muli", sans-serif !important;
-  background: var(--mainColor) !important;
+  background: var(--mainWhite) !important;
   color: var(--mainBlack);
-}
-.text-title {
-  font-family: "Muli", sans-serif;
-  color: red;
-  background: blue;
 }

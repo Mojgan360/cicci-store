@@ -2,13 +2,13 @@
   <defs>
     <style>
       .cls-1 {
-        font-size: 30px;
-        fill: #2d385d;
+        font-size: 20px;
+        fill: #ffb400;
         font-family: "Arial Black";
       }
 
       .cls-2 {
-        fill: #ccc;
+        fill: #07617d;
       }
     </style>
   </defs>
