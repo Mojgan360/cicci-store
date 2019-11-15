@@ -28,15 +28,14 @@ ea5455 */
   --primaryColor: #ffb400;
   --mainColor: #ececeb;
   --darkColor: #07617d;
-  --test: #ff304f;
-  /* --mainWhiteRight: #faeeb7; */
+
   --mainBlack: #2e383f;
 
   --primaryRGBA: rgba(0, 0, 0, 0.3);
   --mainWhite: rgb(245, 245, 245);
 
   --mainTransition: all 0.3s ease-in-out;
-  --mainSpacing: 0.3rem;
+  --mainSpacing: 0.4rem;
 }
 .text-title {
   font-family: "Montserrat", sans-serif;
@@ -51,4 +50,22 @@ body {
   font-family: "Muli", sans-serif !important;
   background: var(--mainWhite) !important;
   color: var(--mainBlack);
+}
+.main-link {
+  padding: 0.5rem 1rem;
+  background: var(--primaryColor);
+  color: var(--darkColor);
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  outline: 2px solid var(--primaryColor);
+  outline-offset: 4px;
+  border: none;
+  transition: var(--mainTransition);
+}
+.main-link:hover {
+  background: var(--mainColor);
+  text-decoration: none;
+  outline-color: var(--mainColor);
+  color: var(--primaryColor);
 }
