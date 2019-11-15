@@ -10,7 +10,14 @@ export default function HomePage() {
         {value => {
           return (
             <Faced title="awesome gatgets" max>
-              <Link to="products"> our products</Link>
+              <Link
+                className="main-link"
+                style={{ margin: "2.5rem" }}
+                to="products"
+              >
+                {" "}
+                our products
+              </Link>
             </Faced>
           );
         }}
