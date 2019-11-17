@@ -31,17 +31,21 @@ ea5455 */
 
   --mainBlack: #2e383f;
 
-  --primaryRGBA: rgba(0, 0, 0, 0.3);
+  --primaryRGBA: rgba(0, 0, 0, 0.25);
   --mainWhite: rgb(245, 245, 245);
 
   --mainTransition: all 0.3s ease-in-out;
   --mainSpacing: 0.4rem;
 }
 .text-title {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Muli", sans-serif;
   font-weight: bold;
   letter-spacing: var(--mainSpacing);
   text-transform: capitalize;
+}
+
+.text-main {
+  color: var(--primaryColor);
 }
 .text-main {
   color: var(--primaryColor);

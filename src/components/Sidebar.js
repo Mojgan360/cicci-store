@@ -35,7 +35,6 @@ const SideBarWrapper = styled.nav`
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 1;
   border-right: 5px solid var(--primaryColor);
   transition: var(--mainTransition);
   transform: ${props => (props.show ? "translateX(0)" : "translateX(-100%)")};

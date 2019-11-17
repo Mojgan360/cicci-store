@@ -33,7 +33,7 @@ const NavWrapper = styled.nav`
   top: 0;
   width: 100%;
   padding: 1rem 1.5rem;
-  background: var(--mainGrey);
+  background: var(--mainColor);
   border-bottom: 3px solid var(--primaryColor);
 
   .nav-center {
