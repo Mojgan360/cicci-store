@@ -2,6 +2,8 @@ import React from "react";
 import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
 import Faced from "../components/Faced";
+import Services from "../components/HomePage/Services";
+import FeaturedProducts from "../components/HomePage/FeaturedProducts";
 
 export default function HomePage() {
   return (
@@ -22,6 +24,8 @@ export default function HomePage() {
           );
         }}
       </ProductConsumer>
+      <Services />
+      <FeaturedProducts />
     </>
   );
 }
