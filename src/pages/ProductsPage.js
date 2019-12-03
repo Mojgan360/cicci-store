@@ -1,9 +1,13 @@
 import React from "react";
+import Products from "../components/ProductsPage/Products";
+import Faced from "../components/Faced";
+import productsBcg from "../images/productsBcg.png";
 
 export default function ProductsPage() {
   return (
     <>
-      <h1>Hello From Products Page</h1>
+      <Faced img={productsBcg} />
+      <Products />
     </>
   );
 }
