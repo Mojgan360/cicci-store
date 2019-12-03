@@ -3,7 +3,7 @@ import { ProductConsumer } from "../context";
 import { Link } from "react-router-dom";
 import Faced from "../components/Faced";
 import Services from "../components/HomePage/Services";
-import FeaturedProducts from "../components/HomePage/FeaturedProducts";
+import Featured from "../components/HomePage/Featured";
 
 export default function HomePage() {
   return (
@@ -11,13 +11,12 @@ export default function HomePage() {
       <ProductConsumer>
         {value => {
           return (
-            <Faced title="awesome gatgets" max>
+            <Faced title="awesome gatgets" max="true">
               <Link
                 className="main-link"
                 style={{ margin: "2.5rem" }}
                 to="products"
               >
-                {" "}
                 our products
               </Link>
             </Faced>
@@ -25,7 +24,7 @@ export default function HomePage() {
         }}
       </ProductConsumer>
       <Services />
-      <FeaturedProducts />
+      <Featured />
     </>
   );
 }

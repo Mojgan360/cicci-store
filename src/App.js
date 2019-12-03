@@ -16,6 +16,7 @@ import Navbar from "./components/Navbar";
 import Sidebar from "./components/Sidebar";
 import SideCart from "./components/SideCart";
 import Footer from "./components/Footer";
+
 class App extends Component {
   render() {
     return (
@@ -33,7 +34,6 @@ class App extends Component {
           <Route path="/cart" component={Cart} />
           <Route component={Default} />
         </Switch>
-
         <Footer />
       </>
     );

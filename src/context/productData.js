@@ -2,7 +2,7 @@ export const items = [
   {
     sys: { id: 0 },
     fields: {
-      title: "google pixel - black",
+      title: "Xiaomi",
       price: 10,
       company: "google",
       description:
@@ -86,12 +86,12 @@ export const items = [
     sys: { id: 6 },
 
     fields: {
-      title: "fuji X100s photo camera",
+      title: "Vintage Leica Camera",
       price: 90,
       company: "fuji",
       description:
         "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
-      featured: true,
+      featured: false,
 
       image: { fields: { file: { url: "img/product-6.png" } } }
     }
@@ -176,6 +176,33 @@ export const items = [
         "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
       featured: false,
       image: { fields: { file: { url: "img/product-12.png" } } }
+    }
+  },
+  {
+    sys: { id: 13 },
+
+    fields: {
+      title: "Galaxy S7 Edge Mockup",
+      price: 28,
+      company: "Samsung",
+      description:
+        "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
+      featured: true,
+      image: { fields: { file: { url: "img/product-13.png" } } }
+    }
+  },
+  {
+    sys: { id: 14 },
+
+    fields: {
+      title: "fuji X100s photo camera",
+      price: 90,
+      company: "fuji",
+      description:
+        "Shaman hexagon fam activated charcoal literally cardigan. Pitchfork YOLO man bun hella. Trust fund vexillologist squid put a bird on it man braid, selvage pug. Schlitz kombucha chillwave pug shabby chic cornhole. Try-hard four loko listicle yuccie kitsch small batch narwhal celiac selfies distillery cloud bread farm-to-table art party leggings glossier.",
+      featured: false,
+
+      image: { fields: { file: { url: "img/product-14.png" } } }
     }
   }
 ];
