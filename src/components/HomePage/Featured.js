@@ -11,7 +11,7 @@ export default function Featured() {
         {/* Title */}
         <Title title="featured produts" center="true" />
         {/* prouducts */}
-        <div className="row">
+        <div className="row my-5">
           <ProductConsumer>
             {value => {
               const { featuredProducts } = value;
