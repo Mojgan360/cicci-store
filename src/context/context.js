@@ -48,15 +48,25 @@ class ProductProvider extends Component {
         this.addTotals();
       }
     );
-    // console.log(featuredProducts);
   };
 
   getStorageCart = () => {
-    return [];
+    // return [];
+
+    let cart;
+    if (localStorage.getItem("cart")) {
+      cart = JSON.parse(localStorage.getItem("cart"));
+    } else {
+      cart = [];
+    }
+    return cart;
   };
 
   getStorageProduct = () => {};
 
+  syncStorage = () => {
+    localStorage.setItem("cart", JSON.stringify(this.state.cart));
+  };
   // handle sidebar
   handleSidebar = () => {
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
@@ -142,7 +152,7 @@ class ProductProvider extends Component {
       },
       () => {
         this.addTotals();
-        // this.syncStorage();
+        this.syncStorage();
         //  this.handleOpenCart();
       }
     );
