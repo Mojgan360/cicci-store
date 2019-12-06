@@ -73,3 +73,6 @@ body {
   outline-color: var(--mainColor);
   color: var(--primaryColor);
 }
+.cart-icon {
+  cursor: pointer;
+}
