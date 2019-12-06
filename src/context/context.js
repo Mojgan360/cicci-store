@@ -107,7 +107,6 @@ class ProductProvider extends Component {
     this.state.cart.forEach(item => {
       subTotal += item.total;
       cartItems += item.count;
-      console.log(`count: ${item.count}`);
     });
 
     subTotal = parseFloat(subTotal.toFixed(2));
