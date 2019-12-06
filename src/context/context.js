@@ -20,7 +20,7 @@ class ProductProvider extends Component {
     filteredProducts: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: false
+    loading: true
   };
   componentDidMount() {
     this.setProducts(items);
@@ -52,7 +52,6 @@ class ProductProvider extends Component {
 
   getStorageCart = () => {
     // return [];
-
     let cart;
     if (localStorage.getItem("cart")) {
       cart = JSON.parse(localStorage.getItem("cart"));
@@ -62,7 +61,11 @@ class ProductProvider extends Component {
     return cart;
   };
 
-  getStorageProduct = () => {};
+  getStorageProduct = () => {
+    return localStorage.getItem("singleProduct")
+      ? JSON.parse(localStorage.getItem("singleProduct"))
+      : {};
+  };
 
   syncStorage = () => {
     localStorage.setItem("cart", JSON.stringify(this.state.cart));
@@ -85,7 +88,13 @@ class ProductProvider extends Component {
     this.setState({ cartOpen: true });
   };
   setSingleProduct = id => {
-    console.log(`single product ID is: ${id}`);
+    let product = this.state.storeProducts.find(item => item.id === id);
+    console.log(product);
+    localStorage.setItem("singleProduct", JSON.stringify(product));
+    this.setState({
+      singleProduct: { ...product },
+      loading: false
+    });
   };
 
   // getTotals
