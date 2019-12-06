@@ -8,7 +8,7 @@ const ProductContext = React.createContext();
 class ProductProvider extends Component {
   state = {
     sidebarOpen: false,
-    cartOpen: false,
+    cartOpen: true,
     cartItems: 0,
     link: linkData,
     socialDataIcon: socialData,
@@ -75,9 +75,9 @@ class ProductProvider extends Component {
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
   };
 
-  // hanldle sart
+  // hanldle cart
   handleCart = () => {
-    this.setState({ cartOpen: !this.state.sidebarOpen });
+    this.setState({ cartOpen: !this.state.cartopen });
   };
   //close cart
   handlecloseCart = () => {
@@ -161,7 +161,7 @@ class ProductProvider extends Component {
       () => {
         this.addTotals();
         this.syncStorage();
-        //  this.handleOpenCart();
+        this.handleOpenCart();
       }
     );
   };
