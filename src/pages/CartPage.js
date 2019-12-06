@@ -1,9 +1,12 @@
 import React from "react";
-
+import CartSection from "../components/CartPage/";
+import Faced from "../components/Faced";
+import cartBkg from "../images/cartBkg.png";
 export default function CartPage() {
   return (
     <>
-      <h1>Hello From Cart Page</h1>
+      <Faced img={cartBkg} />
+      <CartSection />
     </>
   );
 }
