@@ -20,7 +20,13 @@ class ProductProvider extends Component {
     filteredProducts: [],
     featuredProducts: [],
     singleProduct: {},
-    loading: true
+    loading: true,
+    search: "",
+    price: 0,
+    min: 0,
+    max: 0,
+    company: "all",
+    shipping: false
   };
   componentDidMount() {
     this.setProducts(items);
@@ -35,6 +41,8 @@ class ProductProvider extends Component {
       return product;
     });
     let featuredProducts = storeProducts.filter(item => item.featured === true);
+
+    let maxPrice = Math.max(...storeProducts.map(item => item.price));
     this.setState(
       {
         storeProducts,
@@ -42,7 +50,9 @@ class ProductProvider extends Component {
         featuredProducts,
         cart: this.getStorageCart(),
         singleProduct: this.getStorageProduct(),
-        loading: false
+        loading: false,
+        price: maxPrice,
+        max: maxPrice
       },
       () => {
         this.addTotals();
@@ -237,6 +247,24 @@ class ProductProvider extends Component {
     );
   };
 
+  handleChange = event => {
+    const name = event.target.name;
+    const value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
+    this.setState(
+      {
+        [name]: value
+      },
+      this.sortData()
+    );
+  };
+
+  sortData = () => {
+    console.log("sort data");
+  };
+
   render() {
     return (
       <ProductContext.Provider
@@ -251,7 +279,8 @@ class ProductProvider extends Component {
           increment: this.increment,
           decrement: this.decrement,
           removeItem: this.removeItem,
-          clearCart: this.clearCart
+          clearCart: this.clearCart,
+          handleChange: this.handleChange
         }}
       >
         {this.props.children}
