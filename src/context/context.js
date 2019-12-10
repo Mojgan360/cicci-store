@@ -80,6 +80,16 @@ class ProductProvider extends Component {
   syncStorage = () => {
     localStorage.setItem("cart", JSON.stringify(this.state.cart));
   };
+
+  setSingleProduct = id => {
+    let product = this.state.storeProducts.find(item => item.id === id);
+    // console.log(product);
+    localStorage.setItem("singleProduct", JSON.stringify(product));
+    this.setState({
+      singleProduct: { ...product },
+      loading: false
+    });
+  };
   // handle sidebar
   handleSidebar = () => {
     this.setState({ sidebarOpen: !this.state.sidebarOpen });
@@ -96,15 +106,6 @@ class ProductProvider extends Component {
   // open
   handleOpenCart = () => {
     this.setState({ cartOpen: true });
-  };
-  setSingleProduct = id => {
-    let product = this.state.storeProducts.find(item => item.id === id);
-    console.log(product);
-    localStorage.setItem("singleProduct", JSON.stringify(product));
-    this.setState({
-      singleProduct: { ...product },
-      loading: false
-    });
   };
 
   // getTotals
@@ -253,16 +254,46 @@ class ProductProvider extends Component {
       event.target.type === "checkbox"
         ? event.target.checked
         : event.target.value;
+    //this.setState(
     this.setState(
       {
         [name]: value
       },
-      this.sortData()
+      this.sortData
     );
   };
 
   sortData = () => {
-    console.log("sort data");
+    const { storeProducts, company, shipping, search, price } = this.state;
+    console.log("sorting data.....");
+    let tempProducts = [...storeProducts];
+    // price sort
+    let tempPrice = parseInt(price);
+
+    tempProducts = tempProducts.filter(item => item.price <= tempPrice);
+
+    // company sort
+    if (company !== "all") {
+      tempProducts = tempProducts.filter(item => item.company === company);
+    }
+    //shipping sort
+    if (shipping) {
+      tempProducts = tempProducts.filter(item => item.freeShipping === true);
+    }
+    //search sort
+    if (search.length > 0) {
+      tempProducts = tempProducts.filter(item => {
+        let tempSearch = search.toLowerCase();
+        let tempTitle = item.title.toLowerCase().slice(0, search.length);
+        if (tempSearch === tempTitle) {
+          return item;
+        }
+      });
+    }
+    this.setState({
+      filteredProducts: tempProducts
+    });
+    console.log(tempProducts);
   };
 
   render() {
