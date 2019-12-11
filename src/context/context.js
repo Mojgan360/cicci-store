@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { linkData } from "../context/linkData";
 import { socialData } from "../context/sosialData.js";
-import { items } from "./productData";
+//import { items } from "./productData";
+import { client } from "./contentful";
 
 const ProductContext = React.createContext();
 
@@ -29,7 +30,13 @@ class ProductProvider extends Component {
     shipping: false
   };
   componentDidMount() {
-    this.setProducts(items);
+    // this.setProducts(items);
+    client
+      .getEntries({
+        content_type: "cicciShop"
+      })
+      .then(response => this.setProducts(response.items))
+      .catch(console.error);
   }
 
   //set Products
@@ -288,6 +295,7 @@ class ProductProvider extends Component {
         if (tempSearch === tempTitle) {
           return item;
         }
+        return item;
       });
     }
     this.setState({
